@@ -1,0 +1,95 @@
+/*
+Этот css-код скомпилирован автоматически. Я использую препроцессор LESS, по-этому, пожалуйста, закройте этот файл и откройте Style/style.less, заранее спасибо за понимание
+*/
+@font-face {
+  font-family: 'Roboto';
+  src: url(../Fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url(../Fonts/Roboto-Black.ttf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url(../Fonts/SF-Pro-Text-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url(../Fonts/SF-Pro-Text-Light.ttf);
+  font-weight: 300;
+}
+body {
+  font-family: 'SF Pro Text', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+body #main-form {
+  margin: 31px auto 0;
+  padding: 40px;
+  background: #f7f5f9;
+  border-radius: 12px;
+  width: 401px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+body #main-form .main-form__title {
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+  height: 20px;
+  font-weight: 900;
+  font-size: 24px;
+  color: #3b3d43;
+}
+body #main-form .main-form__input {
+  font-weight: 300;
+  background: #ffffff;
+  width: 401px;
+  height: 48px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 25px;
+  outline: none;
+  box-sizing: border-box;
+  padding: 14px 32.15px 14px 15px;
+  font-size: 15px;
+  box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+  transition: all 0.2s ease;
+}
+body #main-form .main-form__input::placeholder {
+  color: #d0c9d6;
+}
+body #main-form .main-form__input:focus {
+  border: 1.5px solid rgba(133, 79, 200, 0.5);
+}
+body #main-form .main-form__input:hover {
+  background: #f8f8f8;
+}
+body #main-form .main-form__name {
+  word-spacing: -0.2px;
+  text-transform: capitalize;
+  letter-spacing: -0.2px;
+}
+body #main-form .main-form__phone {
+  letter-spacing: -0.4px;
+}
+body #main-form .main-form__btn {
+  word-spacing: 0.2px;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  background: #6979f8;
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 34px;
+  padding-bottom: 13px;
+  cursor: pointer;
+}
+body #main-form .main-form__btn:hover {
+  background: #7483fa;
+}
+body #main-form .main-form__btn:active {
+  position: relative;
+  top: 1px;
+}

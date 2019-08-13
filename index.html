@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <!--работа Метелева Владислава, vlad.metelev@yahoo.com, +7 902 638 17 97
+    P.S. Надеюсь вы не против моих комментариев :) я знаю, что в реальных проектах такой свободы себе давать нельзя -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>For Digital Spectr</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Плагин maskedinput для поля номера телефона-->
+    <script src=" js/jquery.maskedinput.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" href="Style/normalize.css">
+    <link rel="stylesheet" href="Style/style.css">
+
+</head>
+
+<body>
+
+    <div class="form-block">
+        <form id="main-form" class="form" action="https://digital-spectr.com/ac/academy.php" method="POST">
+            <div class="main-form__title">Задать вопрос</div>
+            <input type="text" class="main-form__name main-form__input" placeholder="Фамилия Имя Отчество *" name="name"
+                id="name" pattern="^[А-Яа-яЁё -]+$" required>
+            <input type="tel" class="main-form__phone main-form__input" placeholder="Телефон *" name="phone" id="phone"
+                required>
+            <!--Я использую маску ввода номера (плагин maskedinput). Либо можно использовать атрибуты
+            pattern="^[7|8][0-9 -]+$" minlength="11" maxlength="16"-->
+            <input type="email" class="main-form__email main-form__input" placeholder="Email" name="email" id="email">
+            <!--Как по мне, нет особой необходимости добавлять валидацию в email с помощью pattern, т.к встроеная с этим справляется,
+            но при необходимости всё-же можно дописать pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"-->
+            <input type="submit" class="main-form__btn main-form__input" value="Отправить запрос">
+        </form>
+    </div>
+
+</body>
+
+</html>

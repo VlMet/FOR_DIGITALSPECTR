@@ -1,0 +1,136 @@
+//файл с переменными локальных стилей
+@import "variables.less";
+
+/*
+Возможно, дизайнер в макете использовал немного изменённые шрифты, т.к. те начертания, которые указаны в макете немного не совпадают
+с реальными, а по-скольку ни свизи с дизайнером, ни папки с исходниками, я решил я использовал вместо 
+'Roboto'-bold -> 'Roboto'-black, а вместо 'SF Pro Text'-regular -> 'SF Pro Text'-light.
+А также свойства letter-spacing и word-spacing, для того, чтобы максимально приблизить сайт к макету
+Так-же если быть очень внимательным текст немного вытянут по вертикали, можно попробовать к нему добавить свойство
+transform: scale(0.9,1.2) и немного уменьшить font-size, но поскольку разница практически незаметна я оставил так, как есть
+Так-же есть подозрения, что шрифт Roboto вовсе не должен использоваться в проекте,
+т.к. в локальных стилях нет нималейшего его упоминания. Честно сказать, я немного запутался в шрифтах, т.к. Figma я пользуюсь впервые и 
+мне пока не особо понятны некоторые моменты
+*/
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Fonts/Roboto-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../Fonts/Roboto-Black.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url(../Fonts/SF-Pro-Text-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url(../Fonts/SF-Pro-Text-Light.ttf);
+    font-weight: 300;
+}
+
+//можно указать переменную из variables.less или указать значение вручную
+@main-font: 'SF Pro Text', sans-serif;
+@other-font: 'Roboto', sans-serif;
+@main-form-bckg: @color-neutral-5;
+@title-color: #3B3D43;
+@input-bckg-color: @color-neutral-6;
+@input-text-color: #D0C9D6;
+@button-color: @color-accent-1;
+@input-border-focus-color: rgba(133, 79, 200, 0.5); //#854FC8
+@text-spacing: 0.2px; //чтобы убрать все буквенные отступы нужно просто поставить значение 0 
+
+
+body {
+    .body-1();
+
+    #main-form {
+        margin: 31px auto 0;
+        padding: 40px;
+        background: @main-form-bckg;
+        border-radius: 12px;
+        width: 401px;
+        box-shadow: @dropshadow-3;
+        //я специально не добавляю height, чтобы форма была более гибкой, при добавлении других элементов
+
+        .main-form__title {
+            line-height: 20px;
+            font-family: @other-font;
+            height: 20px;
+            font-weight: 900;
+            font-size: 24px;
+            color: @title-color;
+
+        }
+
+        //общие стили у всех инпутов в форме
+        .main-form__input {
+            font-weight: 300;
+            background: @input-bckg-color;
+            width: 401px;
+            height: 48px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 25px;
+            outline: none;
+            box-sizing: border-box;
+            padding: 14px 32.15px 14px 15px;
+            font-size: 15px;
+            box-shadow: @dropshadow-1;
+            transition: all 0.2s ease;
+
+            &::placeholder {
+                color: @input-text-color;
+            }
+
+            &:focus {
+                border: 1.5px solid @input-border-focus-color;
+            }
+
+            //по макету я не понял, какой делать эффект при наведении, но при этом это обязательное условие в задании, по-этому я добавил свой
+            &:hover {
+                background: @input-bckg-color - #070707; //автоматически высчитывается оттекнок от цвета фона, сейчас #f8f8f8
+            }
+        }
+
+        //дополнительная стилизация текста
+        .main-form__name {
+            word-spacing: 0 - @text-spacing;
+            text-transform: capitalize;
+            letter-spacing: 0 - @text-spacing;
+        }
+
+        .main-form__phone {
+            letter-spacing: (0 - @text-spacing) * 2;
+        }
+
+        //кнопка
+        .main-form__btn {
+            word-spacing: @text-spacing;
+            letter-spacing: @text-spacing;
+            text-transform: uppercase;
+            background: @button-color;
+            color: @color-neutral-6;
+            font-size: 16px;
+            padding-left: 34px;
+            padding-bottom: 13px;
+            cursor: pointer;
+
+            &:hover {
+                background: @button-color + #0B0A02; //сейчас #7483fa
+            }
+
+            &:active {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
